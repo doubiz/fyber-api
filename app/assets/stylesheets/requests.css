@@ -1,0 +1,33 @@
+.request-form {
+	margin-top: 50px;
+}
+.request-form .form-control {
+	text-align: center;
+}
+
+.offer{
+	border: 1px solid #eee;
+	height: 200px;
+}
+.offer .header{
+	height: 50px;
+	margin-bottom: 10px;
+}
+.offer .thumbnail {
+	height: 75px;
+}
+
+.offer .thumbnail img{
+	max-height: 75px;
+	max-width: 75px;
+}
+
+#loading{
+	width: 100%;
+	text-align: center;
+	display: none;
+}
+
+.no-offers{
+	text-align: center;
+}

@@ -1,0 +1,13 @@
+.container
+	-if offers.present?
+		-offers.each do |offer|
+			.col-md-2.offer
+				.header
+					=offer.title
+				.thumbnail
+					%img{:src => offer.thumbnail_lowres}
+				.payout
+					="payout: #{offer.payout}"
+	-else
+		%h2.no-offers
+			="No offers available"

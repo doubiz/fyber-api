@@ -6,6 +6,9 @@ class RequestsController < ApplicationController
   def create
     @offer_request = OfferRequest.new(request_params)
     @offer_response = @offer_request.get_offers
+    respond_to do |format|
+      format.js {render :layout=>false}
+    end
   end
 
   private
