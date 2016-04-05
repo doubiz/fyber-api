@@ -17,6 +17,7 @@ class OfferRequest
   def initialize(options = {})
     options = DEFAULT_HASH.merge(options)
     super
+    self.pub0 = self.pub0.delete(' ')
     self.timestamp = Time.now.to_i
     set_hashkey
   end
@@ -42,7 +43,7 @@ class OfferRequest
         end
       else
         # Encountered a status message that is not 200
-        self.errors = res.body
+        self.errors.add(res.body)
         return false
       end
     else
@@ -58,6 +59,7 @@ class OfferRequest
     sorted_hash_of_params = Hash[self.as_json.sort]
     sorted_query = sorted_hash_of_params.to_query
     sorted_query += "&#{Rails.application.secrets.fyber_api_key}"
+    p sorted_query
     self.hashkey = Digest::SHA1.hexdigest sorted_query
   end
 

@@ -1,0 +1,3 @@
+$("#loading").fadeOut();
+$("#submit").attr("disabled" , false);
+$("#offers").html("#{j render partial: 'offer_response', locals: {offers: @offer_response.offers}}")
