@@ -11,3 +11,7 @@ The view after the request is processed is updated async.
 1- `bundle`
 
 2- `rails s`
+
+# Running tests
+
+1- `rake test`
